@@ -69,8 +69,6 @@ section {
   font-size: 1.02rem;
   color: var(--muted);
   max-width: 480px;
-
-  b { color: var(--text); font-weight: 500; }
 }
 
 // --- Prosa ---
@@ -78,11 +76,6 @@ section {
   font-size: 1rem;
   color: var(--muted);
   max-width: 520px;
-
-  b {
-    color: var(--text);
-    font-weight: 500;
-  }
 }
 
 // --- Interesses (lado pessoal, no Perfil) ---
@@ -91,8 +84,14 @@ section {
   font-size: 1rem;
   color: var(--muted);
   max-width: 560px;
+}
 
-  b { color: var(--text); font-weight: 500; }
+// Destaque em negrito — compartilhado pelos textos corridos
+.intro b,
+.prose b,
+.interests b {
+  color: var(--text);
+  font-weight: 500;
 }
 
 // --- Linhas de definição (perfil) ---

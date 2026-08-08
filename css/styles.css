@@ -263,19 +263,11 @@ section + section {
   color: var(--muted);
   max-width: 480px;
 }
-.intro b {
-  color: var(--text);
-  font-weight: 500;
-}
 
 .prose {
   font-size: 1rem;
   color: var(--muted);
   max-width: 520px;
-}
-.prose b {
-  color: var(--text);
-  font-weight: 500;
 }
 
 .interests {
@@ -284,6 +276,9 @@ section + section {
   color: var(--muted);
   max-width: 560px;
 }
+
+.intro b,
+.prose b,
 .interests b {
   color: var(--text);
   font-weight: 500;
