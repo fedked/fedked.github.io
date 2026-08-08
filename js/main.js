@@ -20,7 +20,7 @@ document.getElementById('nav').innerHTML = SECTIONS.map(s =>
 document.getElementById('mmenu').innerHTML = SECTIONS.map(s =>
   `<a href="#${s.id}"><span data-i18n="${s.nav}"></span></a>`).join('') +
   `<div class="mf">
-     <img class="flag" src="assets/flag_deaf.webp" alt="Bandeira Surda internacional" />
+     <img class="flag" src="assets/flag_deaf.webp" alt="Bandeira Surda internacional (criada por Arnaud Balard)" />
      <span class="flag-cap">BANDEIRA SURDA</span>
    </div>`;
 
