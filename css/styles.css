@@ -207,7 +207,7 @@ section + section {
   border-top: 1px solid var(--line);
 }
 
-#inicio {
+#home {
   padding-top: 16vh;
 }
 
@@ -562,7 +562,7 @@ html[data-theme=light] .cv-bg span {
   section {
     padding: 9vh 0;
   }
-  #inicio {
+  #home {
     padding-top: 6vh;
   }
   .facts .row,
