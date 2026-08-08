@@ -1,0 +1,265 @@
+@use 'tokens' as *;
+
+// ===== Área principal =====
+main {
+  margin-left: var(--sidebar-w);
+  padding: 0 clamp(28px, 6vw, 90px);
+}
+
+.col { 
+  max-width: var(--content-w); 
+}
+
+section {
+  padding: 12vh 0;
+  & + section { 
+    border-top: 1px solid var(--line); 
+  }
+}
+
+#inicio { padding-top: 16vh; }
+
+.label {
+  font-family: var(--display);
+  font-size: .56rem;
+  font-weight: 600;
+  letter-spacing: .32em;
+  color: var(--title);
+  margin-bottom: 34px;
+}
+
+// --- Hero ---
+.avatar {
+  display: block;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 90%;  // foca mais na parte de baixo (rosto)
+  outline: 1px solid var(--line);
+  outline-offset: 3px;
+  margin-bottom: 28px;
+}
+
+.hi {
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.name {
+  font-family: var(--display);
+  color: var(--turquoise);
+  font-size: clamp(1.7rem, 5vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -.01em;
+  margin: 16px 0 18px;
+}
+
+.role {
+  font-family: var(--display);
+  font-size: .95rem;
+  letter-spacing: .16em;
+  color: var(--text);
+  margin-bottom: 26px;
+
+  em { color: var(--faint); font-style: normal; }
+}
+
+.intro {
+  font-size: 1.02rem;
+  color: var(--muted);
+  max-width: 480px;
+
+  b { color: var(--text); font-weight: 500; }
+}
+
+// --- Prosa ---
+.prose {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 520px;
+
+  b {
+    color: var(--text);
+    font-weight: 500;
+  }
+}
+
+// --- Interesses (lado pessoal, no Perfil) ---
+.interests {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 560px;
+
+  b { color: var(--text); font-weight: 500; }
+}
+
+// --- Linhas de definição (perfil) ---
+.facts {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+
+    &:last-child { border-bottom: 1px solid var(--line); }
+  }
+
+  dt {
+    font-family: var(--display);
+    font-size: .56rem;
+    letter-spacing: .14em;
+    color: var(--faint);
+  }
+
+  dd { 
+    font-size: .96rem; 
+    color: var(--text); 
+  }
+}
+
+// --- Skills ---
+.sgroup {
+  margin-top: 34px;
+
+  &:first-of-type { margin-top: 4px; }
+
+  .gl {
+    font-family: var(--display);
+    font-size: .56rem;
+    letter-spacing: .18em;
+    color: var(--faint);
+    margin-bottom: 16px;
+  }
+}
+
+.slist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: .92rem;
+  color: var(--muted);
+  cursor: default;
+  transition: color .3s var(--ease);
+
+  &:hover { 
+    color: var(--menu); 
+  }
+
+  svg { 
+    width: 15px; 
+    height: 15px; 
+    opacity: .85; 
+  }
+}
+
+// --- Projetos ---
+.proj {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+
+  a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 24px;
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+    transition: opacity .3s var(--ease);
+
+    &:last-child { border-bottom: 1px solid var(--line); }
+    &:hover .pt { color: var(--menu); }
+  }
+
+  .pt {
+    grid-column: 1;
+    font-family: var(--display);
+    font-size: .78rem;
+    letter-spacing: .04em;
+    color: var(--text);
+    transition: color .3s var(--ease);
+  }
+
+  .pd {
+    grid-column: 1;
+    font-size: .92rem;
+    color: var(--muted);
+    max-width: 440px;
+  }
+
+  .pg {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    font-size: .70rem;
+    color: var(--faint);
+    text-align: right;
+    letter-spacing: .04em;
+    line-height: 1.9;
+  }
+}
+
+.note {
+  margin-top: 22px;
+  font-size: .82rem;
+  color: var(--faint);
+}
+
+// --- Contato ---
+.clinks {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    align-items: center;
+    transition: color .3s var(--ease);
+
+    &:last-child { border-bottom: 1px solid var(--line); }
+    &:hover { color: var(--menu); }
+    &:hover .k { color: var(--menu); }
+  }
+
+  .k {
+    font-family: var(--display);
+    font-size: .56rem;
+    letter-spacing: .14em;
+    color: var(--faint);
+    transition: color .3s var(--ease);
+  }
+
+  .v {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .96rem;
+
+    svg { width: 15px; height: 15px; }
+  }
+}
+
+// --- Rodapé ---
+footer {
+  margin-left: var(--sidebar-w);
+  padding: 40px clamp(28px, 6vw, 90px);
+  font-size: .72rem;
+  color: var(--faint);
+  max-width: calc(var(--content-w) + 180px);
+}

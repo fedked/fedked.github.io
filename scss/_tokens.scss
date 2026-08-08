@@ -1,0 +1,41 @@
+// ===== Design tokens =====
+// Variáveis de compilação (SCSS) + custom properties de runtime (temas)
+
+// --- Variáveis SCSS (compile-time) ---
+$sidebar-w: 240px;
+$content-w: 620px;
+$turquoise: #04B2D9;
+$ease: cubic-bezier(.4, 0, .2, 1);
+$bp-mobile: 900px;
+
+// --- Custom properties (runtime — necessárias para o tema claro/escuro) ---
+:root {
+  --display: 'Michroma', sans-serif;
+  --body: 'Manrope', system-ui, sans-serif;
+  --turquoise: #{$turquoise};
+  --ease: #{$ease};
+  --sidebar-w: #{$sidebar-w};
+  --content-w: #{$content-w};
+}
+
+html[data-theme='dark'] {
+  --bg: #1a1a1a;
+  --text: #F8FAFC;
+  --muted: rgba(248, 250, 252, .56);
+  --faint: rgba(248, 250, 252, .34);
+  --title: rgba(242, 206, 27);
+  --line: rgba(248, 250, 252, .09);
+  --menu: #7d93e0;          // azul clareado p/ legibilidade no escuro
+  color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  --bg: #F8FAFC;
+  --text: #0B0F19;
+  --muted: rgba(11, 15, 25, .60);
+  --faint: rgba(11, 15, 25, .40);
+  --title: rgba(4, 157, 217);
+  --line: rgba(11, 15, 25, .10);
+  --menu: #1B378C;          // azul-escuro exato
+  color-scheme: light;
+}

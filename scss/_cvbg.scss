@@ -1,0 +1,34 @@
+@use 'tokens' as *;
+
+// ===== Marca d'água "CV" (contorno) no fundo, lado direito =====
+.cv-bg {
+  position: fixed;
+  top: 50%;
+  right: clamp(40px, 7vw, 150px);
+  transform: translateY(-50%);
+  z-index: -1;                 // atrás de todo o conteúdo, acima do fundo
+  display: flex;
+  flex-direction: row;         // "CV" na horizontal, lado a lado
+  align-items: center;
+  gap: .04em;                  // respiro entre o C e o V
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+
+  span {
+    font-family: var(--display);
+    font-size: clamp(8rem, 22vh, 18rem);
+    color: transparent;                              // sem preenchimento
+    -webkit-text-stroke: 1.5px rgba(248, 250, 252, .14); // só contorno (escuro)
+  }
+}
+
+// Contorno adaptado ao tema claro
+html[data-theme='light'] .cv-bg span {
+  -webkit-text-stroke: 1.5px rgba(11, 15, 25, .13);
+}
+
+// Some quando a tela é estreita (não há espaço à direita)
+@media (max-width: 1200px) {
+  .cv-bg { display: none; }
+}

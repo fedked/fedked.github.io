@@ -1,0 +1,12 @@
+// ============================================
+// Fernando Kendi Utida — Portfólio
+// Arquivo principal: reúne os partials.
+// Compile com:  npm run build:css   (ou npm run watch:css)
+// ============================================
+
+@use 'tokens';
+@use 'base';
+@use 'sidebar';
+@use 'content';
+@use 'cvbg';
+@use 'responsive';

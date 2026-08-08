@@ -1,0 +1,14 @@
+{
+  "name": "site-profissional",
+  "version": "1.0.0",
+  "description": "Site profissional — Fernando Kendi Utida (Analista de Sistemas & SQL Developer)",
+  "private": true,
+  "scripts": {
+    "build:css": "sass scss/styles.scss css/styles.css --style=expanded",
+    "watch:css": "sass --watch scss/styles.scss css/styles.css",
+    "start": "sass --watch scss/styles.scss css/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}
