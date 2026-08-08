@@ -54,6 +54,9 @@ const I18N = {
     // Tema
     themeDark: 'ESCURO',
     themeLight: 'CLARO',
+
+    // Flag
+    flagDeaf: 'BANDEIRA SURDA',
   },
 
   'en-US': {
@@ -106,6 +109,9 @@ const I18N = {
     // Theme
     themeDark: 'DARK',
     themeLight: 'LIGHT',
+
+    // Flag
+    flagDeaf: 'DEAF FLAG',
   },
 };
 
