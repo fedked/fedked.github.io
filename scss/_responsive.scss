@@ -44,6 +44,12 @@
     }
 
     svg { width: 18px; height: 18px; }
+
+    #mLang {
+      font-family: var(--display);
+      font-size: .58rem;
+      letter-spacing: .1em;
+    }
   }
 
   .mmenu {

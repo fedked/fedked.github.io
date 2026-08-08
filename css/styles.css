@@ -162,6 +162,35 @@ a {
   height: 14px;
 }
 
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--display);
+  font-size: 0.5rem;
+  letter-spacing: 0.14em;
+}
+.lang button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--faint);
+  transition: color 0.3s var(--ease);
+}
+.lang button:hover {
+  color: var(--text);
+}
+.lang button.on {
+  color: var(--turquoise);
+}
+.lang .sep {
+  color: var(--faint);
+  opacity: 0.6;
+}
+
 main {
   margin-left: var(--sidebar-w);
   padding: 0 clamp(28px, 6vw, 90px);
@@ -500,6 +529,11 @@ html[data-theme=light] .cv-bg span {
   .mb-act svg {
     width: 18px;
     height: 18px;
+  }
+  .mb-act #mLang {
+    font-family: var(--display);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
   }
   .mmenu {
     position: fixed;

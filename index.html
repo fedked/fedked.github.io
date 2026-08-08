@@ -29,6 +29,7 @@
   <div class="mbar">
     <span class="mb">FKU · PORTFÓLIO</span>
     <div class="mb-act">
+      <button id="mLang" aria-label="Mudar idioma / Change language">PT</button>
       <button id="mTheme" aria-label="Alternar tema"></button>
       <button id="mMenu" aria-label="Menu" aria-expanded="false"></button>
     </div>
@@ -44,6 +45,11 @@
     <button class="toggle" id="theme" aria-label="Alternar tema claro/escuro">
       <span class="tic"></span><span class="tlbl"></span>
     </button>
+    <div class="lang" id="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="pt-BR">PT</button>
+      <span class="sep">/</span>
+      <button type="button" data-lang="en-US">EN</button>
+    </div>
   </aside>
 
   <main>
@@ -51,47 +57,48 @@
 
       <section id="home">
         <img class="avatar" src="assets/nando.jpeg" alt="Foto de Fernando Kendi Utida" />
-        <p class="hi">Hello, I'm</p>
+        <p class="hi" data-i18n="heroHi">Olá, eu sou</p>
         <h1 class="name">Fernando Kendi</h1>
-        <p class="role">Analista de Sistemas <em>/</em> SQL Developer</p>
-        <p class="intro"><b>Surdo</b>, usuário nativo de <b>LIBRAS</b> e <b>paulista</b>.</p>
+        <p class="role" data-i18n="role">Analista de Sistemas <em>/</em> SQL Developer</p>
+        <p class="intro" data-i18n="intro"><b>Surdo</b>, usuário nativo de <b>LIBRAS</b> e <b>paulista</b>.</p>
       </section>
 
       <section id="perfil">
-        <p class="label">PERFIL</p>
-        <p class="prose">Analista de Sistemas e <b>SQL Developer</b>. Como usuário nativo de <b>LIBRAS</b>,
-          tenho uma forte percepção visual e gosto de manter as coisas organizadas, analisar tudo com atenção 
+        <p class="label" data-i18n="navPerfil">PERFIL</p>
+        <p class="prose" data-i18n="perfilProse">Analista de Sistemas e <b>SQL Developer</b>. Como usuário nativo de <b>LIBRAS</b>,
+          tenho uma forte percepção visual e gosto de manter as coisas organizadas, analisar tudo com atenção
           aos detalhes e entender as necessidades das pessoas.</p>
         <dl class="facts">
-          <div class="row"><dt>LOCAL</dt><dd>São Paulo, Brasil</dd></div>
-          <div class="row"><dt>IDIOMA</dt><dd>LIBRAS · Português · Inglês básico</dd></div>
-          <div class="row"><dt>ÁREA</dt><dd>Análise de Sistemas · Desenvolvimento SQL · Front-end</dd></div>
+          <div class="row"><dt data-i18n="factLocalK">LOCAL</dt><dd data-i18n="factLocalV">São Paulo, Brasil</dd></div>
+          <div class="row"><dt data-i18n="factLangK">IDIOMA</dt><dd data-i18n="factLangV">LIBRAS · Português · Inglês básico</dd></div>
+          <div class="row"><dt data-i18n="factAreaK">ÁREA</dt><dd data-i18n="factAreaV">Análise de Sistemas · Desenvolvimento SQL · Front-end</dd></div>
         </dl>
-        <p class="interests">Gosto de pesquisar e conhecer mais sobre <b>História</b>, que é um dos meus principais hobbies. Também curto viajar para conhecer lugares diferentes e aproveitar momentos de tranquilidade. Gosto de andar de bicicleta no parque nos fins de semana. Sou apaixonado por <b>videogames</b>, principalmente no Nintendo, e não dispenso um bom <b>café</b>.</p>
+        <p class="interests" data-i18n="interests">Gosto de pesquisar e conhecer mais sobre <b>História</b>, que é um dos meus principais hobbies. Também curto viajar para conhecer lugares diferentes e aproveitar momentos de tranquilidade. Gosto de andar de bicicleta no parque nos fins de semana. Sou apaixonado por <b>videogames</b>, principalmente no Nintendo, e não dispenso um bom <b>café</b>.</p>
       </section>
 
       <section id="skills">
-        <p class="label">SKILLS</p>
+        <p class="label" data-i18n="navSkills">SKILLS</p>
         <div id="skillsRoot"></div>
       </section>
 
       <section id="projects">
-        <p class="label">PROJECTS</p>
+        <p class="label" data-i18n="navProjects">PROJETOS</p>
         <div class="proj" id="projRoot"></div>
       </section>
 
       <section id="contact">
-        <p class="label">CONTACT</p>
-        <p class="prose">Aberto a oportunidades como <b>Analista de Sistemas</b> e <b>SQL Developer</b>.
+        <p class="label" data-i18n="navContact">CONTATO</p>
+        <p class="prose" data-i18n="contactProse">Aberto a oportunidades como <b>Analista de Sistemas</b> e <b>SQL Developer</b>.
           Prefiro contato por texto ou vídeo em LIBRAS.</p>
         <div class="clinks" id="clinks"></div>
       </section>
 
     </div>
   </main>
-    <footer>© <span id="yr"></span> fedked — All rights reserved</footer>
+    <footer>© <span id="yr"></span> fedked — <span data-i18n="footer">Todos os direitos reservados</span></footer>
   
   <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

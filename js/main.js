@@ -1,79 +1,104 @@
 // ============================================
 // Fernando Kendi Utida — Portfólio
 // Conteúdo (dados) + renderização + interações
-// Depende de: icons.js (função global icon())
+// Depende de: icons.js (icon()) e i18n.js (I18N, applyI18n, tr)
 // ============================================
 
 // ---------- Navegação ----------
+// (o texto vem do dicionário via data-i18n — aqui só o id e a chave)
 const SECTIONS = [
-  { id: 'home',   label: 'HOME' },
-  { id: 'perfil',   label: 'PERFIL' },
-  { id: 'skills',   label: 'SKILLS' },
-  { id: 'projects', label: 'PROJECTS' },
-  { id: 'contact',  label: 'CONTACT' },
+  { id: 'home',     nav: 'navHome' },
+  { id: 'perfil',   nav: 'navPerfil' },
+  { id: 'skills',   nav: 'navSkills' },
+  { id: 'projects', nav: 'navProjects' },
+  { id: 'contact',  nav: 'navContact' },
 ];
 
 document.getElementById('nav').innerHTML = SECTIONS.map(s =>
-  `<a href="#${s.id}" data-id="${s.id}"><span class="bar"></span>${s.label}</a>`).join('');
+  `<a href="#${s.id}" data-id="${s.id}"><span class="bar"></span><span class="nav-lbl" data-i18n="${s.nav}"></span></a>`).join('');
 
 document.getElementById('mmenu').innerHTML = SECTIONS.map(s =>
-  `<a href="#${s.id}">${s.label}</a>`).join('') +
+  `<a href="#${s.id}"><span data-i18n="${s.nav}"></span></a>`).join('') +
   `<div class="mf">
-     <img class="flag" src="assets/flag_deaf.webp" alt="Bandeira da comunidade Surda" />
+     <img class="flag" src="assets/flag_deaf.webp" alt="Bandeira Surda internacional" />
      <span class="flag-cap">BANDEIRA SURDA</span>
    </div>`;
 
 // ---------- Skills ----------
 const GROUPS = [
-  { label: 'FRONT-END', items: [['HTML', 'html5'], ['CSS', 'css'], ['SCSS', 'sass'], ['JavaScript', 'javascript'], ['Angular', 'angular'], ['Bootstrap', 'bootstrap'], ['Tailwind CSS', 'tailwindcss']] },
-  { label: 'BACK-END', items: [['Kotlin', 'kotlin'], ['SQL', 'db']] },
-  { label: 'FERRAMENTAS & APIs', items: [['SQL Server', 'server'], ['DBeaver', 'dbeaver'], ['APIs REST', 'api'], ['Postman', 'postman'], ['Insomnia', 'insomnia'], ['Swagger', 'swagger'], ['Git', 'git'], ['GitHub', 'github'], ['VS Code', 'code']] },
+  { key: 'groupFront', items: [['HTML', 'html5'], ['CSS', 'css'], ['SCSS', 'sass'], ['JavaScript', 'javascript'], ['Angular', 'angular'], ['Bootstrap', 'bootstrap'], ['Tailwind CSS', 'tailwindcss']] },
+  { key: 'groupBack', items: [['Kotlin', 'kotlin'], ['SQL', 'db']] },
+  { key: 'groupTools', items: [['SQL Server', 'server'], ['DBeaver', 'dbeaver'], ['APIs REST', 'api'], ['Postman', 'postman'], ['Insomnia', 'insomnia'], ['Swagger', 'swagger'], ['Git', 'git'], ['GitHub', 'github'], ['VS Code', 'code']] },
 ];
 
 document.getElementById('skillsRoot').innerHTML = GROUPS.map(g => `
   <div class="sgroup">
-    <div class="gl">${g.label}</div>
+    <div class="gl" data-i18n="${g.key}"></div>
     <div class="slist">${g.items.map(([n, i]) => `<span class="skill">${icon(i)}${n}</span>`).join('')}</div>
   </div>`).join('');
 
-// ---------- Projetos (exemplos) ----------
+// ---------- Projetos ----------
+// título e descrição vêm do dicionário (tKey/dKey); tags e link ficam iguais nos 2 idiomas
 const PROJECTS = [
-  { t: 'API de Integração', d: 'Camada REST documentada em Swagger e testada no Postman.', g: 'Python · Swagger' },
-  { t: 'Dashboard SQL', d: 'Painel de indicadores sobre SQL Server, com views otimizadas e relatórios dinâmicos.', g: 'SQL Server · Python' },
-  { t: 'Portal ASESP', d: 'Site institucional da ASESP, desenvolvido com o auxílio do agente de IA Claude. Em fase alpha.', g: 'Next.js · Tailwind · Sanity', url: 'https://vemsonhar-portal.vercel.app/' },
-  { t: 'FESAI', d: 'Contribuí no desenvolvimento do site de glossário em LIBRAS, ao lado de um time pequeno e surdo.', g: 'Angular · Bootstrap · SASS', url: 'https://www.fesai.com.br/' },
+  { tKey: 'projApiT',   dKey: 'projApiD',   g: 'Python · Swagger' },
+  { tKey: 'projDashT',  dKey: 'projDashD',  g: 'SQL Server · Python' },
+  { tKey: 'projAsespT', dKey: 'projAsespD', g: 'Next.js · Tailwind · Sanity', url: 'https://vemsonhar-portal.vercel.app/' },
+  { tKey: 'projFesaiT', dKey: 'projFesaiD', g: 'Angular · Bootstrap · SASS', url: 'https://www.fesai.com.br/' },
 ];
 
 document.getElementById('projRoot').innerHTML = PROJECTS.map(p => {
   const attrs = p.url ? `href="${p.url}" target="_blank" rel="noopener"` : `href="#" onclick="return false"`;
   return `
   <a ${attrs}>
-    <span class="pt">${p.t}</span>
+    <span class="pt" data-i18n="${p.tKey}"></span>
     <span class="pg">${p.g}</span>
-    <span class="pd">${p.d}</span>
+    <span class="pd" data-i18n="${p.dKey}"></span>
   </a>`;
 }).join('');
 
 // ---------- Contato ----------
 const CONTACTS = [
-  { k: 'E-MAIL',   v: 'fedked@outlook.com', href: 'mailto:fedked@outlook.com', ic: 'mail' },
-  { k: 'LINKEDIN', v: '/in/fernandokendi',  href: 'https://www.linkedin.com/in/fernandokendi', ic: 'linkedin' },
-  { k: 'GITHUB',   v: '/fedked',            href: 'https://github.com/fedked', ic: 'github' },
+  { kKey: 'ctEmail',    v: 'fedked@outlook.com', href: 'mailto:fedked@outlook.com', ic: 'mail' },
+  { kKey: 'ctLinkedin', v: '/in/fernandokendi',  href: 'https://www.linkedin.com/in/fernandokendi', ic: 'linkedin' },
+  { kKey: 'ctGithub',   v: '/fedked',            href: 'https://github.com/fedked', ic: 'github' },
 ];
 
 document.getElementById('clinks').innerHTML = CONTACTS.map(c =>
-  `<a href="${c.href}"${c.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}><span class="k">${c.k}</span><span class="v">${icon(c.ic)}${c.v}</span></a>`).join('');
+  `<a href="${c.href}"${c.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}><span class="k" data-i18n="${c.kKey}"></span><span class="v">${icon(c.ic)}${c.v}</span></a>`).join('');
+
+// ---------- Idioma (PT / EN) ----------
+let currentLang = localStorage.getItem('fku-lang') || 'pt-BR';   // padrão: PT
+
+function paintLang() {
+  document.querySelectorAll('#lang [data-lang]').forEach(b =>
+    b.classList.toggle('on', b.dataset.lang === currentLang));
+  const mLang = document.getElementById('mLang');
+  if (mLang) mLang.textContent = currentLang === 'pt-BR' ? 'PT' : 'EN';
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('fku-lang', lang);
+  applyI18n(lang);   // preenche todos os [data-i18n]
+  paintTheme();      // rótulo ESCURO/CLARO no novo idioma
+  paintLang();
+}
+
+document.querySelectorAll('#lang [data-lang]').forEach(b =>
+  b.addEventListener('click', () => setLang(b.dataset.lang)));
+document.getElementById('mLang').addEventListener('click', () =>
+  setLang(currentLang === 'pt-BR' ? 'en-US' : 'pt-BR'));
 
 // ---------- Tema (claro/escuro) ----------
 const root = document.documentElement;
-const saved = localStorage.getItem('fku-theme');
-if (saved) root.setAttribute('data-theme', saved);
+const savedTheme = localStorage.getItem('fku-theme');
+if (savedTheme) root.setAttribute('data-theme', savedTheme);
 else if (window.matchMedia('(prefers-color-scheme: light)').matches) root.setAttribute('data-theme', 'light');
 
 function paintTheme() {
   const dark = root.getAttribute('data-theme') === 'dark';
   document.querySelector('#theme .tic').innerHTML = icon(dark ? 'sun' : 'moon');
-  document.querySelector('#theme .tlbl').textContent = dark ? 'ESCURO' : 'CLARO';
+  document.querySelector('#theme .tlbl').textContent = tr(currentLang, dark ? 'themeDark' : 'themeLight');
   document.getElementById('mTheme').innerHTML = icon(dark ? 'sun' : 'moon');
 }
 
@@ -86,7 +111,6 @@ function toggleTheme() {
 
 document.getElementById('theme').addEventListener('click', toggleTheme);
 document.getElementById('mTheme').addEventListener('click', toggleTheme);
-paintTheme();
 
 // ---------- Menu mobile ----------
 const mMenu = document.getElementById('mMenu');
@@ -113,3 +137,8 @@ SECTIONS.forEach(s => { const el = document.getElementById(s.id); if (el) spy.ob
 
 // ---------- Ano no rodapé ----------
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ---------- Inicialização ----------
+applyI18n(currentLang);   // aplica o idioma nos textos estáticos + gerados
+paintTheme();
+paintLang();

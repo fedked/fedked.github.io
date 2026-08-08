@@ -102,3 +102,32 @@
 
   svg { width: 14px; height: 14px; }
 }
+
+// --- Seletor de idioma (PT / EN) ---
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--display);
+  font-size: .5rem;
+  letter-spacing: .14em;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    color: var(--faint);
+    transition: color .3s var(--ease);
+
+    &:hover { color: var(--text); }
+    &.on { color: var(--turquoise); }   // idioma ativo em destaque
+  }
+
+  .sep {
+    color: var(--faint);
+    opacity: .6;
+  }
+}
