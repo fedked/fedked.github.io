@@ -3,6 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Aplica tema/idioma salvos ANTES de pintar (evita flash) -->
+<script>
+  (function () {
+    var t = localStorage.getItem('fku-theme');
+    if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.setAttribute('lang', localStorage.getItem('fku-lang') || 'pt-BR');
+  })();
+</script>
+
 <title>Curriculum - Fernando Kendi Utida</title>
 
 <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
