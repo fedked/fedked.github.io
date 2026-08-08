@@ -20,7 +20,7 @@ site-profissional/
 │   ├── icons.js         # ícones (Simple Icons + Lucide)
 │   └── main.js          # conteúdo, renderização e interações
 └── assets/
-    └── bandeira-surda.png   # imagem da bandeira surda (adicionar)
+    └── flag_deaf.webp   # imagem da bandeira surda
 ```
 
 ## Editar os estilos (SCSS)
@@ -39,6 +39,4 @@ npm run watch:css  # recompila sozinho a cada alteração
 (ou servir a pasta com qualquer servidor estático).
 
 ## Pendências
-- Adicionar `assets/bandeira-surda.png`
-- Preencher e-mail, LinkedIn e GitHub reais em `js/main.js`
 - Trocar os projetos de exemplo pelos reais em `js/main.js`
