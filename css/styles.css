@@ -41,7 +41,7 @@ html {
 
 body {
   font-family: var(--body);
-  font-weight: 300;
+  font-weight: 400;
   background: var(--bg);
   color: var(--text);
   line-height: 1.75;
@@ -201,23 +201,37 @@ main {
 }
 
 section {
-  padding: 12vh 0;
-}
-section + section {
-  border-top: 1px solid var(--line);
+  padding: 8vh 0;
+  /*   & + section {
+      border-top: 1px solid var(--line);
+      padding-top: 11vh;
+    } */
 }
 
 #home {
-  padding-top: 16vh;
+  padding-top: 15vh;
+  padding-bottom: 12vh;
 }
 
 .label {
   font-family: var(--display);
-  font-size: 0.56rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.32em;
   color: var(--title);
   margin-bottom: 34px;
+}
+
+.opportunity-badge {
+  display: inline-block;
+  margin: -12px 0 22px;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--turquoise) 42%, transparent);
+  border-radius: 999px;
+  color: var(--turquoise);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .avatar {
@@ -233,23 +247,25 @@ section + section {
 }
 
 .hi {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--muted);
 }
 
 .name {
-  font-family: var(--display);
+  font-family: var(--body);
+  font-weight: 500;
   color: var(--turquoise);
-  font-size: clamp(1.7rem, 5vw, 3.1rem);
+  font-size: clamp(2rem, 5.2vw, 3.25rem);
   line-height: 1.12;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.04em;
   margin: 16px 0 18px;
 }
 
 .role {
-  font-family: var(--display);
-  font-size: 0.95rem;
-  letter-spacing: 0.16em;
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
   color: var(--text);
   margin-bottom: 26px;
 }
@@ -259,20 +275,20 @@ section + section {
 }
 
 .intro {
-  font-size: 1.02rem;
+  font-size: 1.08rem;
   color: var(--muted);
   max-width: 480px;
 }
 
 .prose {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--muted);
   max-width: 520px;
 }
 
 .interests {
   margin-top: 30px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--muted);
   max-width: 560px;
 }
@@ -302,12 +318,12 @@ section + section {
 }
 .facts dt {
   font-family: var(--display);
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   letter-spacing: 0.14em;
   color: var(--faint);
 }
 .facts dd {
-  font-size: 0.96rem;
+  font-size: 1.05rem;
   color: var(--text);
 }
 
@@ -319,7 +335,7 @@ section + section {
 }
 .sgroup .gl {
   font-family: var(--display);
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   letter-spacing: 0.18em;
   color: var(--faint);
   margin-bottom: 16px;
@@ -335,7 +351,7 @@ section + section {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   color: var(--muted);
   cursor: default;
   transition: color 0.3s var(--ease);
@@ -354,38 +370,57 @@ section + section {
   flex-direction: column;
   margin-top: 8px;
 }
-.proj a {
+.proj .project-card {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 6px 24px;
   padding: 22px 0;
   border-top: 1px solid var(--line);
-  transition: opacity 0.3s var(--ease);
 }
-.proj a:last-child {
+.proj .project-card:last-child {
   border-bottom: 1px solid var(--line);
 }
-.proj a:hover .pt {
+.proj .project-link {
+  transition: opacity 0.3s var(--ease);
+}
+.proj .project-link:hover .pt {
   color: var(--menu);
 }
 .proj .pt {
   grid-column: 1;
-  font-family: var(--display);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-family: var(--body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--text);
   transition: color 0.3s var(--ease);
 }
+.proj .project-meta {
+  grid-column: 2;
+  grid-row: 1/span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.proj .badge {
+  padding: 3px 7px;
+  border: 1px solid color-mix(in srgb, var(--turquoise) 35%, transparent);
+  border-radius: 2px;
+  color: var(--turquoise);
+  font-family: var(--display);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+}
 .proj .pd {
   grid-column: 1;
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   color: var(--muted);
   max-width: 440px;
 }
 .proj .pg {
-  grid-column: 2;
-  grid-row: 1/span 2;
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   color: var(--faint);
   text-align: right;
   letter-spacing: 0.04em;
@@ -394,7 +429,7 @@ section + section {
 
 .note {
   margin-top: 22px;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--faint);
 }
 
@@ -423,7 +458,7 @@ section + section {
 }
 .clinks .k {
   font-family: var(--display);
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   letter-spacing: 0.14em;
   color: var(--faint);
   transition: color 0.3s var(--ease);
@@ -432,7 +467,7 @@ section + section {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.96rem;
+  font-size: 1.05rem;
 }
 .clinks .v svg {
   width: 15px;
