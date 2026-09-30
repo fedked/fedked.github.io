@@ -28,7 +28,7 @@ document.getElementById('mmenu').innerHTML = SECTIONS.map(s =>
 const GROUPS = [
   { key: 'groupFront', items: [['HTML', 'html5'], ['CSS', 'css'], ['SCSS', 'sass'], ['JavaScript', 'javascript'], ['Angular', 'angular'], ['Bootstrap', 'bootstrap'], ['Tailwind CSS', 'tailwindcss']] },
   { key: 'groupBack', items: [['Kotlin', 'kotlin'], ['SQL', 'db']] },
-  { key: 'groupTools', items: [['SQL Server', 'server'], ['DBeaver', 'dbeaver'], ['APIs REST', 'api'], ['Postman', 'postman'], ['Insomnia', 'insomnia'], ['Swagger', 'swagger'], ['Git', 'git'], ['GitHub', 'github'], ['VS Code', 'code']] },
+  { key: 'groupTools', items: [['SQL Server', 'server'], ['DBeaver', 'dbeaver'], ['APIs REST', 'api'], ['Postman', 'postman'], ['Insomnia', 'insomnia'], ['Swagger', 'swagger'], ['Git', 'git'], ['GitHub', 'github'], ['VS Code', 'code'], ['Linux', 'terminal'], ['LLMs', 'sparkles'], ['Office 365', 'briefcase']] },
 ];
 
 document.getElementById('skillsRoot').innerHTML = GROUPS.map(g => `
@@ -38,22 +38,25 @@ document.getElementById('skillsRoot').innerHTML = GROUPS.map(g => `
   </div>`).join('');
 
 // ---------- Projetos ----------
-// título e descrição vêm do dicionário (tKey/dKey); tags e link ficam iguais nos 2 idiomas
+// título, descrição e etiqueta vêm do dicionário; tecnologias ficam iguais nos 2 idiomas
 const PROJECTS = [
-  { tKey: 'projApiT',   dKey: 'projApiD',   g: 'Python · Swagger' },
-  { tKey: 'projDashT',  dKey: 'projDashD',  g: 'SQL Server · Python' },
-  { tKey: 'projAsespT', dKey: 'projAsespD', g: 'Next.js · Tailwind · Sanity', url: 'https://vemsonhar-portal.vercel.app/' },
-  { tKey: 'projFesaiT', dKey: 'projFesaiD', g: 'Angular · Bootstrap · SASS', url: 'https://www.fesai.com.br/' },
+  { tKey: 'projApiT',   dKey: 'projApiD',   g: 'Python · Swagger', badgeKey: 'projStudy' },
+  { tKey: 'projAsespT', dKey: 'projAsespD', g: 'Next.js · Tailwind · Sanity', badgeKey: 'projFrontEnd' },
+  { tKey: 'projFesaiT', dKey: 'projFesaiD', g: 'Angular · Bootstrap · SASS', badgeKey: 'projFrontEnd', url: 'https://www.fesai.com.br/' },
 ];
 
 document.getElementById('projRoot').innerHTML = PROJECTS.map(p => {
-  const attrs = p.url ? `href="${p.url}" target="_blank" rel="noopener"` : `href="#" onclick="return false"`;
-  return `
-  <a ${attrs}>
+  const content = `
     <span class="pt" data-i18n="${p.tKey}"></span>
-    <span class="pg">${p.g}</span>
+    <span class="project-meta">
+      ${p.badgeKey ? `<span class="badge" data-i18n="${p.badgeKey}"></span>` : ''}
+      <span class="pg">${p.g}</span>
+    </span>
     <span class="pd" data-i18n="${p.dKey}"></span>
-  </a>`;
+  `;
+  return p.url
+    ? `<a class="project-card project-link" href="${p.url}" target="_blank" rel="noopener">${content}</a>`
+    : `<article class="project-card">${content}</article>`;
 }).join('');
 
 // ---------- Contato ----------

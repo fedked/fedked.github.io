@@ -7,7 +7,7 @@ const I18N = {
   'pt-BR': {
     // Hero
     heroHi: 'Olá, eu sou',
-    role: 'Analista de Sistemas <em>/</em> SQL Developer',
+    role: 'Profissional de TI e Administração',
     intro: '<b>Surdo</b>, usuário nativo de <b>LIBRAS</b> e <b>paulista</b>.',
 
     // Navegação / rótulos de seção
@@ -18,13 +18,14 @@ const I18N = {
     navContact: 'CONTATO',
 
     // Perfil
-    perfilProse: 'Analista de Sistemas e <b>SQL Developer</b>. Como usuário nativo de <b>LIBRAS</b>, tenho uma forte percepção visual e gosto de manter as coisas organizadas, analisar tudo com atenção aos detalhes e entender as necessidades das pessoas.',
+    opportunityBadge: 'Em busca de oportunidades',
+    perfilProse: 'Tenho experiência em TI e na área administrativa, além de conhecimentos em SQL Server adquiridos durante meus estudos. Minha percepção visual é apurada, e gosto de manter as coisas organizadas, analisar tudo com atenção aos detalhes e entender as necessidades das pessoas.<br><br>Atualmente, estou aprendendo a utilizar ferramentas de inteligência artificial e a criar prompts com instruções claras para diferentes tarefas. Também estou aprofundando meus conhecimentos em comandos Linux, com foco no uso do terminal.',
     factLocalK: 'LOCAL',
     factLocalV: 'São Paulo, Brasil',
     factLangK: 'IDIOMA',
     factLangV: 'LIBRAS · Português · Inglês básico',
     factAreaK: 'ÁREA',
-    factAreaV: 'Análise de Sistemas · Desenvolvimento SQL · Front-end',
+    factAreaV: 'TI: Suporte técnico · Infraestrutura · Sistemas · Administração',
     interests: 'Gosto de pesquisar e conhecer mais sobre <b>História</b>, que é um dos meus principais hobbies. Também curto viajar para conhecer lugares diferentes e aproveitar momentos de tranquilidade. Gosto de andar de bicicleta no parque nos fins de semana. Sou apaixonado por <b>videogames</b>, principalmente no Nintendo, e não dispenso um bom <b>café</b>.',
 
     // Skills (grupos)
@@ -35,10 +36,10 @@ const I18N = {
     // Projetos
     projApiT: 'API de Integração',
     projApiD: 'Camada REST documentada em Swagger e testada no Postman.',
-    projDashT: 'Dashboard SQL',
-    projDashD: 'Painel de indicadores sobre SQL Server, com views otimizadas e relatórios dinâmicos.',
+    projStudy: 'ESTUDO',
     projAsespT: 'Portal ASESP',
-    projAsespD: 'Site institucional da ASESP, desenvolvido com o auxílio do agente de IA Claude. Em fase alpha.',
+    projFrontEnd: 'FRONT-END',
+    projAsespD: 'Site institucional da ASESP, desenvolvido com o auxílio do agente de IA Claude. Em desenvolvimento; lançamento previsto em breve.',
     projFesaiT: 'FESAI',
     projFesaiD: 'Contribuí no desenvolvimento do site de glossário em LIBRAS, ao lado de um time pequeno e surdo.',
 
@@ -46,7 +47,7 @@ const I18N = {
     ctEmail: 'E-MAIL',
     ctLinkedin: 'LINKEDIN',
     ctGithub: 'GITHUB',
-    contactProse: 'Aberto a oportunidades como <b>Analista de Sistemas</b> e <b>SQL Developer</b>. Prefiro contato por texto ou vídeo em LIBRAS.',
+    contactProse: 'Aberto a oportunidades em <b>suporte técnico</b>, <b>infraestrutura</b>, <b>sistemas</b> e <b>funções administrativas</b>. Prefiro contato por texto ou vídeo em LIBRAS.',
 
     // Rodapé
     footer: 'Todos os direitos reservados',
@@ -62,7 +63,7 @@ const I18N = {
   'en-US': {
     // Hero
     heroHi: "Hello, I'm",
-    role: 'Systems Analyst <em>/</em> SQL Developer',
+    role: 'IT and Administrative Professional',
     intro: '<b>Deaf</b>, native <b>LIBRAS</b> user, from <b>São Paulo</b>.',
 
     // Navigation / section labels
@@ -73,13 +74,14 @@ const I18N = {
     navContact: 'CONTACT',
 
     // Profile
-    perfilProse: "Systems Analyst and <b>SQL Developer</b>. As a native <b>LIBRAS</b> user, I have strong visual perception and like to keep things organized, analyze everything with attention to detail, and understand people's needs.",
+    opportunityBadge: 'Seeking opportunities',
+    perfilProse: "I have experience in IT and administration, as well as knowledge of SQL Server gained through my studies. I have a keen visual perception and like to keep things organized, analyze everything with attention to detail, and understand people's needs.<br><br>I am currently learning to use artificial intelligence tools and write clear prompts for different tasks. I am also expanding my knowledge of Linux commands, focusing on terminal use.",
     factLocalK: 'LOCATION',
     factLocalV: 'São Paulo, Brazil',
     factLangK: 'LANGUAGES',
     factLangV: 'LIBRAS · Portuguese · Basic English',
     factAreaK: 'FIELD',
-    factAreaV: 'Systems Analysis · SQL Development · Front-end',
+    factAreaV: 'IT: Technical Support · Infrastructure · Systems · Administration',
     interests: "I enjoy researching and learning more about <b>History</b>, one of my main hobbies. I also love traveling to discover different places and enjoy calm moments. On weekends, I like riding my bike in the park. I'm passionate about <b>video games</b>, especially on the Nintendo, and never turn down a good <b>coffee</b>.",
 
     // Skills (groups)
@@ -90,10 +92,10 @@ const I18N = {
     // Projects
     projApiT: 'API Integration',
     projApiD: 'REST layer documented in Swagger and tested in Postman.',
-    projDashT: 'Dashboard SQL',
-    projDashD: 'Indicators dashboard over SQL Server, with optimized views and dynamic reports.',
+    projStudy: 'STUDY',
     projAsespT: 'ASESP Portal',
-    projAsespD: 'ASESP institutional website, developed with the help of the AI agent Claude. In alpha stage.',
+    projFrontEnd: 'FRONT-END',
+    projAsespD: 'ASESP institutional website, developed with the help of the AI agent Claude. In development; planned to launch soon.',
     projFesaiT: 'FESAI',
     projFesaiD: 'Contributed to the development of a LIBRAS glossary website, alongside a small, Deaf team.',
 
@@ -101,7 +103,7 @@ const I18N = {
     ctEmail: 'EMAIL',
     ctLinkedin: 'LINKEDIN',
     ctGithub: 'GITHUB',
-    contactProse: 'Open to opportunities as a <b>Systems Analyst</b> and <b>SQL Developer</b>. I prefer contact by text or LIBRAS video.',
+    contactProse: 'Open to opportunities in <b>technical support</b>, <b>infrastructure</b>, <b>systems</b>, and <b>administrative roles</b>. I prefer contact by text or LIBRAS video.',
 
     // Footer
     footer: 'All rights reserved',
