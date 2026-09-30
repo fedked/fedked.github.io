@@ -1,6 +1,6 @@
 # Site Profissional — Fernando Kendi Utida
 
-Portfólio minimalista · Analista de Sistemas & SQL Developer.
+Portfólio minimalista · Profissional de TI e Administração.
 
 ## Estrutura
 
@@ -18,7 +18,8 @@ site-profissional/
 │   └── _responsive.scss # ajustes mobile
 ├── js/
 │   ├── icons.js         # ícones (Simple Icons + Lucide)
-│   └── main.js          # conteúdo, renderização e interações
+│   ├── i18n.js          # textos em português e inglês
+│   └── main.js          # skills, projetos, renderização e interações
 └── assets/
     └── flag_deaf.webp   # imagem da bandeira surda
 ```
@@ -37,6 +38,3 @@ npm run watch:css  # recompila sozinho a cada alteração
 
 É um site estático — basta abrir `index.html` no navegador
 (ou servir a pasta com qualquer servidor estático).
-
-## Pendências
-- Trocar os projetos de exemplo pelos reais em `js/main.js`
